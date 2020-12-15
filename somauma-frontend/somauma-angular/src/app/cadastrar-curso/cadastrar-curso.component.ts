@@ -25,8 +25,8 @@ export class CadastrarCursoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    window.scroll(0,0)
     this.findAllCategorias()
-    this.findByIdCategoria()
     this.findAllCurso()
   }
 
@@ -42,19 +42,21 @@ export class CadastrarCursoComponent implements OnInit {
       this.listaCategorias = resp
     })
   }
+
   findByIdCategoria() {
-    this.categoriaService.getByIdCategoria(this.categoria.id).subscribe((resp: any = Categoria) => {
+    this.categoriaService.getByIdCategoria(this.idCategoria).subscribe((resp: any = Categoria) => {
       this.categoria = resp;
     })
   }
 
+
   salvarCurso() {
     this.categoria.id = this.idCategoria
-
     if (this.curso.title == null || this.curso.price == null || this.curso.description == null) {
       alert("Preencha todos os campos")
     } else {
       this.cursoService.postCurso(this.curso).subscribe((resp: any = Curso) => {
+        
         this.curso = resp
         this.curso = new Curso()
         this.router.navigate(["/home"])

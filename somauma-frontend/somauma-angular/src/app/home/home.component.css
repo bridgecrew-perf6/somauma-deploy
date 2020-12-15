@@ -1,0 +1,9 @@
+.parallax {
+    background-image: url('src\assets\3341363.jpg');
+
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

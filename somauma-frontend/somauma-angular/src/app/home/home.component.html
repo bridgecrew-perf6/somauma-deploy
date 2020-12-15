@@ -1,17 +1,19 @@
-<section class="w-100 py-5">    
+<section class="w-100 py-5">  
     <div class="container">
         <h1 class="mb-3">Cursos</h1>
         <p>{{curso.title}}</p>
+        
         <div class="row d-flex justify-content-start">
             <div *ngFor="let item of listaCursos" class="card m-3">
                 <div class="card-body">
-                <h5 class="card-title">{{item.title}}</h5>
-                <p class="mb-3">{{item.description}}</p>
-                <h6 class="card-title">{{item.price| currency:'BRL'}}</h6>
-                <a href="#" class="btn btn-primary w-100">Conheça esse curso!</a>
+                    <h5 class="card-title">{{item.title}}</h5>
+                    <p class="mb-3">{{item.description}}</p>
+                    <h6 class="card-title">{{item.price| currency:'BRL'}}</h6>
+                    <a href="#" class="btn btn-primary w-100">Conheça esse curso!</a>
                 </div>
             </div>
         </div> 
-       
+        
     </div>
 </section>
+<div class="parallax"></div>

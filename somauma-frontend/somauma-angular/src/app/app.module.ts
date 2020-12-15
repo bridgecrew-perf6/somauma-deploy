@@ -11,6 +11,7 @@ import { CadastrarCursoComponent } from './cadastrar-curso/cadastrar-curso.compo
 import { EditarCursoComponent } from './editar-curso/editar-curso.component';
 import { FormsModule }   from '@angular/forms';
 import { CadastrarCategoriaComponent } from './cadastrar-categoria/cadastrar-categoria.component';
+import { DeleteCategoriaComponent } from './delete-categoria/delete-categoria.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CadastrarCategoriaComponent } from './cadastrar-categoria/cadastrar-cat
     FooterComponent,
     CadastrarCursoComponent,
     EditarCursoComponent,
-    CadastrarCategoriaComponent
+    CadastrarCategoriaComponent,
+    DeleteCategoriaComponent
   ],
   imports: [
     BrowserModule,

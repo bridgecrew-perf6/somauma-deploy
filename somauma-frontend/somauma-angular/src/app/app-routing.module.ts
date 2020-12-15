@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'footer', component: FooterComponent},
   {path: 'cadastrar-curso', component: CadastrarCursoComponent},
-  {path: 'cadastrar-categoria:id', component: CadastrarCategoriaComponent}
+  {path: 'cadastrar-categoria', component: CadastrarCategoriaComponent}
 
 ];
 

@@ -25,9 +25,7 @@ export class CadastrarCategoriaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    
     this.findAllCategorias()
-    this.findByIdCategoria()
     this.findAllCurso()
   }
 
@@ -44,8 +42,9 @@ export class CadastrarCategoriaComponent implements OnInit {
       this.listaCategorias = resp
     })
   }
-  findByIdCategoria() {
-    this.categoriaService.getByIdCategoria(this.categoria.id).subscribe((resp: any = Categoria) => {
+  
+  findByIdCategoria(id:number) {
+    this.categoriaService.getByIdCategoria(id).subscribe((resp: any = Categoria) => {
       this.categoria = resp;
     })
   }
@@ -53,13 +52,16 @@ export class CadastrarCategoriaComponent implements OnInit {
   salvarCategoria() {
     this.categoriaService.postCategoria(this.categoria).subscribe((resp: any = Categoria) => {
       this.categoria = resp
+      this.findAllCategorias()
     })
   }
 
   deleteCategoria() {
-    this.categoriaService.deleteCategoria(this.categoria.id).subscribe(() => {
+    this.findByIdCategoria(this.idCategoria)
+    this.categoriaService.deleteCategoria(this.idCategoria).subscribe(() => {
       this.router.navigate(['/cadastro-curso'])
       alert('Categoria apagada com sucesso!')
+      this.findAllCategorias()
     })
   }
 
