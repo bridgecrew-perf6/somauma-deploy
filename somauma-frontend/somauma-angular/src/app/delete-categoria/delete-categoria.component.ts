@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlternativeServiceOptions } from 'http2';
 import { Categoria } from '../model/Categoria';
 import { CategoriaService } from '../service/categoria.service';
 
