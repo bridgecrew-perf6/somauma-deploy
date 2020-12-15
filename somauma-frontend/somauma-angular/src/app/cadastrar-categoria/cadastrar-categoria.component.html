@@ -1,0 +1,27 @@
+<section class="container d-flex justify-content-center align-items-center">
+    <div class="col-md-6 my-5 py-5">
+        <form>
+            <h2>Cadastre um novo curso</h2>
+            <div class="form-group">
+                <label>Nome da categoria</label>
+                <input type="text" name="name" class="form-control" [(ngModel)]="categoria.name">
+                <small id="name" class="form-text"></small>
+            </div>
+
+            <button type="submit" class="btn btn-primary" (click)="salvarCategoria()">Salvar categoria</button>
+        </form>
+    </div>
+</section>
+
+<section class="container d-flex flex-column justify-content-center align-items-center my-5">
+    <h3 class="row col-md-6 w-100 mb-3">Categorias Existentes</h3>
+    <div class="column w-100 col-md-6">
+        <div *ngFor='let item of listaCategorias' value={{item.id}} >
+            <div class="row d-flex align-items-center">
+                <button class="btn btn-danger mr-3" (click)='deleteCategoria()' [(ngModel)]="idCategoria">Deletar
+                </button>
+                <p class="my-2" name="name">{{item.name}}</p>
+            </div>
+        </div>
+    </div>
+</section>

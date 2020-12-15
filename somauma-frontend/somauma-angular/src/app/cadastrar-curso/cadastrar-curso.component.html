@@ -1,0 +1,39 @@
+<section class="container d-flex justify-content-center align-items-center">
+  <div class="col-md-6 my-5 py-5">
+    <form>
+      <h2>Cadastre um novo curso</h2>
+      <div class="form-group">
+        <label>Nome do curso</label>
+        <input type="text" name="title" class="form-control" [(ngModel)]="curso.title">
+        <small id="title" class="form-text"></small>
+      </div>
+
+      <div class="form-group">
+        <label>Valor (BRL)</label>
+        <input type="number" class="form-control" name="price" [(ngModel)]="curso.price">
+        <small id="price" class="form-text" ></small>
+      </div>
+
+      <div class="form-group">
+        <label>Descrição do curso</label>
+        <textarea class="form-control" name="description" id="description" placeholder="Descrição do curso"
+          [(ngModel)]="curso.description"></textarea>
+      </div>
+
+      <div class="form-group my-3">
+        <label class="" for="tema">Escolha uma categoria ou <a routerLink="/cadastrar-categoria">Crie uma
+            nova</a></label>
+        <select name="categoria" id='categoria' class="form-control" [(ngModel)]="idCategoria" [ngModelOptions]="{categoria: 'idCategoria'}"
+          (change)='findByIdCategoria()'>
+          <option *ngFor='let item of listaCategorias' value={{item.id}}>
+            {{item.name}}
+          </option>
+        </select>
+      </div>
+
+
+      <button type="submit" class="btn btn-primary" (click)="salvarCurso()">Salvar curso</button>
+    </form>
+  </div>
+
+</section>
